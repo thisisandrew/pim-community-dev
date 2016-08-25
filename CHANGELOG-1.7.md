@@ -122,3 +122,11 @@
 - Update classes and services to use the interface `Pim\Component\User\Model\GroupInterface`in place of `Oro\Bundle\UserBundle\Entity\Group`
 - Remove deprecated bundle "Oro\Bundle\UIBundle\OroUIBundle"
 - Remove deprecated bundle "Oro\Bundle\FormBundle\OroFormBundle"
+- Change the constructor of `Pim\Bundle\CatalogBundle\EventSubscriber\MongoDBODM\ProductRelatedEntityRemovalSubscriber`
+    to replace `Doctrine\Common\Persistence\ManagerRegistry` argument by `Akeneo\Component\Console\CommandLauncher`,
+    and replace the product class parameter by `ProductRelatedEntityRemovalCommand` logfile path.
+- Change the constructor of `Pim\Bundle\CatalogBundle\EventSubscriber\MongoDBODM\RemoveOutdatedProductsFromAssociationsSubscriber`
+    to replace `Pim\Bundle\CatalogBundle\Doctrine\MongoDBODM\ProductRepositoryInterface` argument by `Akeneo\Component\Console\CommandLauncher`
+    and `Pim\Component\Catalog\Repository\AssociationTypeRepositoryInterface` argument by `RemoveOutdatedProductsFromAssociationsCommand` logfile path.
+- Change the constructor of `Pim\Bundle\CatalogBundle\EventSubscriber\MongoDBODM\UpdateNormalizedProductDataSubscriber`
+    to replace `Doctrine\Common\Persistence\ManagerRegistry` argument by `Akeneo\Component\Console\CommandLauncher` and add `UpdateNormalizedProductDataCommand` logfile path as third argument.
