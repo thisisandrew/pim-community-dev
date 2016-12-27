@@ -83,6 +83,8 @@ class ProductProcessor extends AbstractProcessor implements ItemProcessorInterfa
             $this->skipItemWithMessage($item, 'The identifier must be filled');
         }
 
+        $this->checkIdentifierDuplication($item, $identifier);
+
         $familyCode = $this->getFamilyCode($item);
         $filteredItem = $this->filterItemData($item);
 
