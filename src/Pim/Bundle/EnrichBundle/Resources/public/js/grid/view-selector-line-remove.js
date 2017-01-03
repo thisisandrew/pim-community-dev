@@ -47,6 +47,8 @@ define(
                 this.$el.html(this.template({
                     hidden: 0 === this.getParent().datagridView.id
                 }));
+
+                return this;
             },
 
             /**

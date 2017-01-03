@@ -128,10 +128,13 @@ define(
                      * This way we can display views and their infos beside them.
                      */
                     formatResult: function (item, $container) {
-                        FormBuilder.build('pim-grid-view-selector-line').then(function (form) {
+                        FormBuilder.buildForm('pim-grid-view-selector-line').then(function (form) {
                             form.setParent(this);
                             form.setView(item, this.currentViewType, this.currentView.id === item.id);
-                            $container.append(form.render().$el);
+
+                            return form.configure().then(function () {
+                                $container.append(form.render().$el);
+                            }.bind(this));
                         }.bind(this));
                     }.bind(this),
 

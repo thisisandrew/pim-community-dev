@@ -38,9 +38,7 @@ define(
                     isCurrent: this.isCurrentView
                 }));
 
-                this.renderExtensions();
-
-                return this;
+                return this.renderExtensions();
             },
 
             /**
