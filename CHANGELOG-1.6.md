@@ -1,3 +1,8 @@
+# 1.6.X 
+
+## Bug fixes
+- PIM-6086: Migration of normalized data for MongoDB
+
 # 1.6.8 (2017-01-05)
 
 ## Bug fixes
