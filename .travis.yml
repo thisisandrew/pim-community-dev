@@ -38,7 +38,7 @@ install:
     - if [ "$TRAVIS_PHP_VERSION" = "7.0" ] || [ "$TRAVIS_PHP_VERSION" = "7.1" ]; then
         composer require alcaeus/mongo-php-adapter --ignore-platform-reqs;
       fi;
-    - ./app/console pim:install
+    - ./app/console pim:install -e=test
     - ./app/console oro:requirejs:generate-config
     - npm install
     - curl http://get.sensiolabs.org/php-cs-fixer-v1.11.phar -o php-cs-fixer
