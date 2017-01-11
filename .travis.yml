@@ -34,7 +34,7 @@ install:
     - mysql -u root -e 'CREATE DATABASE akeneo_pim;'
     - mysql -u root -e 'CREATE USER "akeneo_pim"@"localhost" IDENTIFIED BY "akeneo_pim";'
     - mysql -u root -e 'GRANT ALL ON akeneo_pim.* TO "akeneo_pim"@"localhost";'
-    - composer update --prefer-dist --no-interaction --ignore-platform-reqs
+    - composer update --prefer-dist --no-interaction --ignore-platform-reqs -o
     - if [ "$TRAVIS_PHP_VERSION" = "7.0" ] || [ "$TRAVIS_PHP_VERSION" = "7.1" ]; then
         composer require alcaeus/mongo-php-adapter --ignore-platform-reqs;
       fi;
